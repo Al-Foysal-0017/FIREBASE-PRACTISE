@@ -4,7 +4,7 @@ import db from "./Config";
 const FetchData = () => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState([]);
-  console.log(data);
+  // console.log(data);
 
   React.useEffect(() => {
     const getPostsFromFirebase = [];
@@ -19,7 +19,7 @@ const FetchData = () => {
       setLoading(false);
     });
     return () => subscriber();
-  }, [data]);
+  }, [data, loading]);
 
   if (loading) {
     return <h1>LOADING DATA. PLEASE WAIT</h1>;
